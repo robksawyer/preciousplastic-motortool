@@ -1,8 +1,8 @@
 {
-  "name": "Node.js Getting Started",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "express", "static"],
+  "name": "Precious Plastic Motor Calculator",
+  "description": "A calculator that makes finding a motor for your Precious Plastic machine easier than ever.",
+  "repository": "https://github.com/robksawyer/preciousplastic-motorcalc",
+  "logo": "",
+  "keywords": ["precious plastic","recycling","node", "express", "static"],
   "image": "heroku/nodejs"
 }
