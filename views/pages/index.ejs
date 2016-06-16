@@ -1,61 +1,139 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+	<% include ../partials/header.ejs %>
 </head>
 
 <body>
 
-  <% include ../partials/nav.ejs %>
+	<% include ../partials/nav.ejs %>
 
 <div class="jumbotron text-center">
-  <div class="container">
-    <h1>Welcome to the Precious Plastic Motor Tool</h1>
-    <p>We have realized that finding a motor is a pain. This tool will help you figure out if your motor will work.</p>
-  </div>
+	<div class="container">
+		<img src="flag_color_logo_500x500.png" alt="" class="logo"/>
+		<h1>Welcome to the <br/>Precious Plastic Motor Tool</h1>
+		<p>We have realized that finding a motor is a pain. This tool will help you figure out if your motor will work. Just enter the motor criteria requested below and then submit.</p>
+	</div>
 </div>
 <div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs" class="alert-link">Getting Started with Node on Heroku</a> tutorial.
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/node-js-getting-started">Heroku Button</a> on the repository.</li>
-
-        <li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/node-js-getting-started/blob/master/package.json">package.json</a>, creating a deployable slug.</li>
-        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
-        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
-        <ul>
-          <li><code>git clone https://github.com/heroku/node-js-getting-started.git</code> - this will create a local copy of the source code for the app</li>
-          <li><code>cd node-js-getting-started</code> - change directory into the local source code repository</li>
-          <li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>
-          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#push-local-changes">deploy changes</a> to Heroku</li>
-        </ul>
-      </ul>
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started with Node on Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/deploying-nodejs">Deploying Node Apps on Heroku</a></li>
-      </ul>
-    </div>
-  </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
-  </div>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label for="optionsVoltage">Country Voltage</label>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsVoltage" id="optionsVoltageUnknown" value="0">
+					N/A
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsVoltage" id="optionsVoltage110" value="110">
+					110 Volts
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsVoltage" id="optionsVoltage120" value="120">
+					120 Volts
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsVoltage" id="optionsVoltage220" value="220">
+					220 Volts
+				</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputBrand">Brand</label>
+			<div class="input-group col-sm-6">
+				<input type="text" class="form-control" id="inputBrand" placeholder="" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="optionsPhase">Motor Phase</label>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsPhase" id="optionsPhaseUnknown" value="0">
+					N/A
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsPhase" id="optionsPhase1" value="1">
+					Monophase (Single Phase)
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsPhase" id="optionsPhase3" value="3">
+					Triphase (Three Phase)
+				</label>
+			</div>
+			<p class="help-block">You can read more about motor phases on the <a href="http://www.preciousplasticwiki.com" target="_blank">Precious Plastic Wiki</a> and in the <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide#Triphase_.283_Phase.29_or_Monophase_.28Single_Phase.29_Motors.3F" target="_blank">Definitive Motor Guide</a>.</p>
+		</div>
+		<div class="form-group">
+			<label for="inputRPM">Revolutions Per Minute (RPM)</label>
+			<div class="input-group col-sm-3">
+				<input type="number" class="form-control" id="inputRPM" placeholder="1400"/>
+				<div class="input-group-addon">RPM</div>
+			</div>
+			<p class="help-block">You will need to convert Hz to RPM.</p>
+		</div>
+		<div class="form-group">
+			<label for="inputPower">Power (kW – Kilowatts)</label>
+			<div class="input-group col-sm-3">
+				<input type="number" class="form-control" id="inputPower" placeholder="1.5" />
+				<div class="input-group-addon">kW</div>
+			</div>
+			<p class="help-block">You will need to convert HP to kW.</p>
+		</div>
+		<div class="form-group">
+			<label for="inputTorque">Torque (in N m – Newtons per Meter)</label>
+			<div class="input-group col-sm-3">
+				<input type="number" class="form-control" id="inputTorque" placeholder="60" />
+				<div class="input-group-addon">N m</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputAmps">Amps</label>
+			<div class="input-group col-sm-2">
+				<input type="number" class="form-control" id="inputAmps" placeholder="6.81"/>
+				<div class="input-group-addon">Amps</div>
+			</div>
+			<p class="help-block">You shouldn't use the amps on a motor to pick one out. Instead, use the motor power, speed, and torque. The amps listed on a motor nameplate (Full Load Amps, or FLA) tell you what the maximum current the motor will use in a fully loaded condition. Use this number to design your electrical system, circuit breakers and fuses, etc.</p>
+		</div>
+		<div class="form-group">
+			<label for="inputGearRatio">Gearbox Reducer Ratio (i)</label>
+			<div class="input-group col-sm-2">
+				<input type="text" class="form-control" id="inputGearRatio" placeholder="1:20" />
+			</div>
+			<!-- <p class="help-block"></p> -->
+		</div>
+		<div class="form-group">
+			<label for="inputGearServiceFactor">Gearbox Service Factor (s)</label>
+			<div class="input-group col-sm-2">
+				<input type="number" class="form-control" id="inputGearServiceFactor" placeholder="1.2" />
+			</div>
+			<p class="help-block">See the wiki <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide#How_do_motor_reducer_gearboxes_work_and_how_can_I_choose_the_right_one">FAQ on gearboxes</a>.</p>
+		</div>
+		<div class="form-group">
+			<label for="inputGearServiceClass">Gearbox Service Class</label>
+			<div class="input-group col-sm-2">
+				<input type="text" class="form-control" id="inputGearServiceClass" placeholder="I" />
+			</div>
+			<p class="help-block">This is likely to be a roman numeral. See the wiki <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide#How_do_motor_reducer_gearboxes_work_and_how_can_I_choose_the_right_one">FAQ on gearboxes</a>.</p>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-default">Will it work?</button>
+		</div>
+	</form>
 </div>
-
+<hr/>
+<div id="help" class="container">
+	<h2>Help</h2>
+	<p>Not quite sure what's being asked here. Try hopping over to the <a href="http://www.preciousplasticwiki.com/" target="_blank">Precious Plastic Wiki</a> and reading a bit of the <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide" target="_blank">Definitive Motor Guide</a></p>
+</div>
 
 </body>
 </html>

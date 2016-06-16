@@ -1,17 +1,23 @@
+body{
+	font-family: 'Varela Round', sans-serif;
+}
 .jumbotron {
-	background: #532F8C;
-	color: white;
+	background: #B7D6E3;
+	color: #FFFFFF;
 	padding-bottom: 80px;
 }
+.jumbotron .logo{
+	width:250px;
+}
 .jumbotron .btn-primary {
-	background: #845ac7;
-	border-color: #845ac7;
+	background: #FFD87D;
+	border: none;
 }
 .jumbotron .btn-primary:hover {
-	background: #7646c1;
+	background: #d5b879;
 }
 .jumbotron p {
-	color: #d9ccee;
+	color: #FFFFFF;
 	max-width: 75%;
 	margin: 1em auto 2em;
 }
@@ -20,7 +26,7 @@
 }
 .jumbotron .lang-logo {
 	display: block;
-	background: #B01302;
+	background: #FFD87D;
 	border-radius: 50%;
 	overflow: hidden;
 	width: 100px;
