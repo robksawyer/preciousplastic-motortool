@@ -1,7 +1,7 @@
 {
-  "name": "preciousplastic-motorcalc",
+  "name": "preciousplastic-motortool",
   "version": "0.1.0",
-  "description": "A calculator that makes finding a motor for your Precious Plastic machine easier than ever.",
+  "description": "A tool that makes finding a motor for your Precious Plastic machine easier than ever.",
   "engines": {
     "node": "5.9.1"
   },
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/robksawyer/preciousplastic-motorcalc"
+    "url": "https://github.com/robksawyer/preciousplastic-motortool"
   },
   "keywords": [
     "node",

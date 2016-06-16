@@ -1,7 +1,7 @@
 {
-  "name": "Precious Plastic Motor Calculator",
-  "description": "A calculator that makes finding a motor for your Precious Plastic machine easier than ever.",
-  "repository": "https://github.com/robksawyer/preciousplastic-motorcalc",
+  "name": "Precious Plastic Motor Tool",
+  "description": "A tool that makes finding a motor for your Precious Plastic machine easier than ever.",
+  "repository": "https://github.com/robksawyer/preciousplastic-motortool",
   "logo": "",
   "keywords": ["precious plastic","recycling","node", "express", "static"],
   "image": "heroku/nodejs"
