@@ -1,5 +1,5 @@
-# Precious Plastic Motor Calculator
-A calculator that makes finding a motor for your Precious Plastic machine easier than ever.
+# Precious Plastic Motor Tool
+A tool that makes finding a motor for your Precious Plastic machine easier than ever.
 
 
 ## Technology Overview
