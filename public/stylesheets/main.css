@@ -9,11 +9,11 @@ body{
 .jumbotron .logo{
 	width:250px;
 }
-.jumbotron .btn-primary {
+.btn-primary {
 	background: #FFD87D;
 	border: none;
 }
-.jumbotron .btn-primary:hover {
+.btn-primary:hover {
 	background: #d5b879;
 }
 .jumbotron p {
