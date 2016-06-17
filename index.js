@@ -11,6 +11,7 @@ var express = require('express'),
  * For more info see: https://github.com/expressjs/body-parser
  */
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -31,7 +32,9 @@ app.get('/', function(request, response) {
 });
 
 app.post('/', function(req, res){
-	var V = req.body.optionsVoltage;
+	console.log(req.body);
+	var shopVolts = req.body.optionsShopVoltage;
+	var motorVolts = req.body.optionsMotorVoltage;
 	var brand = req.body.inputBrand;
 	var phase = req.body.optionsPhase;
 	var RPM = req.body.inputRPM;
@@ -47,7 +50,8 @@ app.post('/', function(req, res){
 
 	res.render('pages/results', {
 		status: status,
-		V: V,
+		shopVolts: shopVolts,
+		motorVolts: motorVolts,
 		brand: brand,
 		phase: phase,
 		RPM: RPM,

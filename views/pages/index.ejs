@@ -10,129 +10,201 @@
 		<div class="jumbotron text-center">
 			<div class="container">
 				<img src="flag_color_logo_500x500.png" alt="" class="logo"/>
-				<h1>Welcome to the <br/>Precious Plastic Motor Tool</h1>
-				<p>We have realized that finding a motor is a pain. This tool will help you figure out if your motor will work. Just enter the motor criteria requested below and then submit.</p>
+				<h1>
+					Welcome to the <br/>Precious Plastic Motor Tool
+				</h1>
+				<p class="lead">We realize that finding the perfect motor for your Precious Plastic machine is not the most intuitive thing. But hopefully this tool will help you figure out if that motor you found on eBay or at the scrapyard will actually work.</p>
+
 			</div>
 		</div>
 		<div class="container">
-			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-				<div class="form-group">
-					<label for="optionsVoltage">Country Voltage</label>
-					<div class="radio">
-						<label>
-							<input type="radio" name="optionsVoltage" id="optionsVoltageUnknown" value="0">
-							N/A
-						</label>
+			<div class="row text-center">
+				<h2>Crank those engines...</h2>
+				<p class="lead">Just enter the motor criteria requested below, cross your fingers and then submit.</p>
+			</div>
+
+			<div class="row">
+				<form action="/" method="post" enctype="multipart/form-data">
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h1 class="panel-title"><i class="fa fa-flag"></i> Shop Properties</h1>
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label for="optionsShopVoltage">Outlet Voltage</label>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsShopVoltage" id="optionsShopVoltageUnknown" value="0">
+										N/A
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsShopVoltage" id="optionsShopVoltage110" value="110">
+										110 Volts
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsShopVoltage" id="optionsShopVoltage120" value="120">
+										120 Volts
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsShopVoltage" id="optionsShopVoltage220" value="220">
+										220 Volts
+									</label>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="radio">
-						<label>
-							<input type="radio" name="optionsVoltage" id="optionsVoltage110" value="110">
-							110 Volts
-						</label>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h1 class="panel-title"><i class="fa fa-wrench"></i> Motor Properties</h1>
+						</div>
+
+						<div class="panel-body">
+							<div class="form-group">
+								<label for="inputBrand">Brand</label>
+								<div class="input-group col-sm-6">
+									<input type="text" class="form-control" id="inputBrand" placeholder="" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="optionsMotorVoltage">Motor Voltage</label>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsMotorVoltage" id="optionsMotorVoltageUnknown" value="0">
+										N/A
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsMotorVoltage" id="optionsMotorVoltage110" value="110">
+										110 Volts
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsMotorVoltage" id="optionsMotorVoltage120" value="120">
+										120 Volts
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsMotorVoltage" id="optionsMotorVoltage220" value="220">
+										220 Volts
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="optionsPhase">Motor Phase</label>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsPhase" id="optionsPhaseUnknown" value="0">
+										N/A
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsPhase" id="optionsPhase1" value="1">
+										Monophase (Single Phase)
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsPhase" id="optionsPhase3" value="3">
+										Triphase (Three Phase)
+									</label>
+								</div>
+								<p class="help-block">You can read more about motor phases on the <a href="http://www.preciousplasticwiki.com" target="_blank">Precious Plastic Wiki</a> and in the <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide#Triphase_.283_Phase.29_or_Monophase_.28Single_Phase.29_Motors.3F" target="_blank">Definitive Motor Guide</a>.</p>
+							</div>
+							<div class="form-group">
+								<label for="inputRPM">Revolutions Per Minute (RPM)</label>
+								<div class="input-group col-sm-3">
+									<input type="number" min="0" class="form-control" id="inputRPM" placeholder="1400"/>
+									<div class="input-group-addon">RPM</div>
+								</div>
+								<p class="help-block">Listed in Hz? Use <a href="http://www.convertunits.com/from/RPM/to/hertz" target="_blank">this converter</a> to get it to RPM. Also note that 60 RPM equals 1 Hz.</p>
+							</div>
+							<div class="form-group">
+								<label for="inputPower">Power (kW – Kilowatts)</label>
+								<div class="input-group col-sm-3">
+									<input type="number" min="0" step="0.1" class="form-control" id="inputPower" placeholder="1.5" />
+									<div class="input-group-addon">kW</div>
+								</div>
+								<p class="help-block">Listed as HP (Horsepower)? Use <a href="https://www.google.com/search?q=1+hp+in+kw" target="_blank">this converter</a> to get it kW. Also note that 2 HP is approximately equal to 1.5 kW.</p>
+							</div>
+							<div class="form-group">
+								<label for="inputTorque">Torque (in N m – Newton meters)</label>
+								<div class="input-group col-sm-3">
+									<input type="number" min="0" class="form-control" id="inputTorque" placeholder="60" />
+									<div class="input-group-addon">N m</div>
+								</div>
+								<p class="help-block">Listed in another unit of measurement? Use <a href="http://www.numberfactory.com/nf_torque.html" target="_blank">this converter</a> to get it to Newton meters.</p>
+							</div>
+							<div class="form-group">
+								<label for="inputAmps">Amps</label>
+								<div class="input-group col-sm-2">
+									<input type="number" class="form-control" id="inputAmps" min="0" placeholder="6.81"/>
+									<div class="input-group-addon">Amps</div>
+								</div>
+								<div class="bs-callout bs-callout-warning">
+									<h4>Note</h4>
+									<p class="help-block">You shouldn't use the amps on a motor to pick one out. Instead, use the motor power, speed, and torque. The amps listed on a motor nameplate (Full Load Amps, or FLA) tell you what the maximum current the motor will use in a fully loaded condition. Use this number to design your electrical system, circuit breakers and fuses, etc.</p>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="radio">
-						<label>
-							<input type="radio" name="optionsVoltage" id="optionsVoltage120" value="120">
-							120 Volts
-						</label>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h1 class="panel-title"><i class="fa fa-cogs"></i> Gearbox Properties</h1>
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label for="inputGearRatio">Gearbox Reducer Ratio (i)</label>
+								<div class="input-group col-sm-2">
+									<input type="text" class="form-control" id="inputGearRatio" placeholder="1:20" />
+								</div>
+								<!-- <p class="help-block"></p> -->
+							</div>
+							<div class="form-group">
+								<label for="inputGearServiceFactor">Gearbox Service Factor (s)</label>
+								<div class="input-group col-sm-2">
+									<input type="number" class="form-control" id="inputGearServiceFactor" placeholder="1.2" />
+								</div>
+								<p class="help-block">See the wiki <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide#How_do_motor_reducer_gearboxes_work_and_how_can_I_choose_the_right_one">FAQ on gearboxes</a>.</p>
+							</div>
+							<div class="form-group">
+								<label for="inputGearServiceClass">Gearbox Service Class</label>
+								<div class="input-group col-sm-2">
+									<input type="text" class="form-control" id="inputGearServiceClass" placeholder="I" />
+								</div>
+								<p class="help-block">This is likely to be a roman numeral. See the wiki <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide#How_do_motor_reducer_gearboxes_work_and_how_can_I_choose_the_right_one">FAQ on gearboxes</a>.</p>
+							</div>
+						</div>
 					</div>
-					<div class="radio">
-						<label>
-							<input type="radio" name="optionsVoltage" id="optionsVoltage220" value="220">
-							220 Volts
-						</label>
+					<div class="form-group clearfix">
+						<button type="reset" class="btn btn-default btn-large">Reset</button>
+						<button type="submit" class="btn btn-primary btn-large">Will it work?</button>
 					</div>
-				</div>
-				<div class="form-group">
-					<label for="inputBrand">Brand</label>
-					<div class="input-group col-sm-6">
-						<input type="text" class="form-control" id="inputBrand" placeholder="" />
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="optionsPhase">Motor Phase</label>
-					<div class="radio">
-						<label>
-							<input type="radio" name="optionsPhase" id="optionsPhaseUnknown" value="0">
-							N/A
-						</label>
-					</div>
-					<div class="radio">
-						<label>
-							<input type="radio" name="optionsPhase" id="optionsPhase1" value="1">
-							Monophase (Single Phase)
-						</label>
-					</div>
-					<div class="radio">
-						<label>
-							<input type="radio" name="optionsPhase" id="optionsPhase3" value="3">
-							Triphase (Three Phase)
-						</label>
-					</div>
-					<p class="help-block">You can read more about motor phases on the <a href="http://www.preciousplasticwiki.com" target="_blank">Precious Plastic Wiki</a> and in the <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide#Triphase_.283_Phase.29_or_Monophase_.28Single_Phase.29_Motors.3F" target="_blank">Definitive Motor Guide</a>.</p>
-				</div>
-				<div class="form-group">
-					<label for="inputRPM">Revolutions Per Minute (RPM)</label>
-					<div class="input-group col-sm-3">
-						<input type="number" class="form-control" id="inputRPM" placeholder="1400"/>
-						<div class="input-group-addon">RPM</div>
-					</div>
-					<p class="help-block">You will need to convert Hz to RPM.</p>
-				</div>
-				<div class="form-group">
-					<label for="inputPower">Power (kW – Kilowatts)</label>
-					<div class="input-group col-sm-3">
-						<input type="number" class="form-control" id="inputPower" placeholder="1.5" />
-						<div class="input-group-addon">kW</div>
-					</div>
-					<p class="help-block">You will need to convert HP to kW.</p>
-				</div>
-				<div class="form-group">
-					<label for="inputTorque">Torque (in N m – Newtons per Meter)</label>
-					<div class="input-group col-sm-3">
-						<input type="number" class="form-control" id="inputTorque" placeholder="60" />
-						<div class="input-group-addon">N m</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="inputAmps">Amps</label>
-					<div class="input-group col-sm-2">
-						<input type="number" class="form-control" id="inputAmps" placeholder="6.81"/>
-						<div class="input-group-addon">Amps</div>
-					</div>
-					<p class="help-block">You shouldn't use the amps on a motor to pick one out. Instead, use the motor power, speed, and torque. The amps listed on a motor nameplate (Full Load Amps, or FLA) tell you what the maximum current the motor will use in a fully loaded condition. Use this number to design your electrical system, circuit breakers and fuses, etc.</p>
-				</div>
-				<div class="form-group">
-					<label for="inputGearRatio">Gearbox Reducer Ratio (i)</label>
-					<label for="inputGearRatio">Gearbox Reducer Ratio (i)</label>
-					<div class="input-group col-sm-2">
-						<input type="text" class="form-control" id="inputGearRatio" placeholder="1:20" />
-					</div>
-					<!-- <p class="help-block"></p> -->
-				</div>
-				<div class="form-group">
-					<label for="inputGearServiceFactor">Gearbox Service Factor (s)</label>
-					<div class="input-group col-sm-2">
-						<input type="number" class="form-control" id="inputGearServiceFactor" placeholder="1.2" />
-					</div>
-					<p class="help-block">See the wiki <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide#How_do_motor_reducer_gearboxes_work_and_how_can_I_choose_the_right_one">FAQ on gearboxes</a>.</p>
-				</div>
-				<div class="form-group">
-					<label for="inputGearServiceClass">Gearbox Service Class</label>
-					<div class="input-group col-sm-2">
-						<input type="text" class="form-control" id="inputGearServiceClass" placeholder="I" />
-					</div>
-					<p class="help-block">This is likely to be a roman numeral. See the wiki <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide#How_do_motor_reducer_gearboxes_work_and_how_can_I_choose_the_right_one">FAQ on gearboxes</a>.</p>
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary">Will it work?</button>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 		<hr/>
-		<div id="help" class="container">
-			<h2>Help</h2>
-			<p>Not quite sure what's being asked here. Try hopping over to the <a href="http://www.preciousplasticwiki.com/" target="_blank">Precious Plastic Wiki</a> and reading a bit of the <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide" target="_blank">Definitive Motor Guide</a></p>
+		<div id="help" class="container" style="min-height: 200px">
+			<div class="row">
+				<h2>Help</h2>
+				<p>Not quite sure what's being asked here. Try hopping over to the <a href="http://www.preciousplasticwiki.com/" target="_blank">Precious Plastic Wiki</a> and reading a bit of the <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide" target="_blank">Definitive Motor Guide</a></p>
+			</div>
 		</div>
+
+		<footer class="footer">
+			<% include ../partials/footer %>
+		</footer>
 	</body>
 </html>

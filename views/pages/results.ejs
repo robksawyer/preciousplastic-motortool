@@ -6,16 +6,24 @@
 
 	<body>
 		<%- include ../partials/nav.ejs %>
-		
+
 		<div class="jumbotron text-center">
 			<div class="container">
 				<img src="flag_color_logo_500x500.png" alt="" class="logo"/>
 				<h1>This motor will work!</h1>
 			</div>
 		</div>
+
 		<div class="container">
 			More details and analysis here.
+			<ul>
+				<li><strong>Brand</strong> <%= brand %></li>
+				<li><strong>Volts</strong> <%= V %></li>
+			</ul>
 		</div>
 
+		<footer class="footer">
+			<% include ../partials/footer %>
+		</footer>
 	</body>
 </html>

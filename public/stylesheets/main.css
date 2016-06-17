@@ -1,6 +1,74 @@
 body{
 	font-family: 'Varela Round', sans-serif;
 }
+
+/*
+* Bootstrap Callouts
+* http://cpratt.co/twitter-bootstrap-callout-css-styles/
+*/
+.bs-callout {
+	padding: 20px;
+	margin: 20px 0;
+	border: 1px solid #eee;
+	border-left-width: 5px;
+	border-radius: 3px;
+}
+.bs-callout h4 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+	margin-bottom: 0;
+}
+.bs-callout code {
+	border-radius: 3px;
+}
+.bs-callout+.bs-callout {
+	margin-top: -5px;
+}
+.bs-callout-default {
+	border-left-color: #777;
+}
+.bs-callout-default h4 {
+	color: #777;
+}
+.bs-callout-primary {
+	border-left-color: #B7D6E3;
+}
+.bs-callout-primary h4 {
+	color: #B7D6E3;
+}
+.bs-callout-success {
+	border-left-color: #5cb85c;
+}
+.bs-callout-success h4 {
+	color: #5cb85c;
+}
+.bs-callout-danger {
+	border-left-color: #d9534f;
+}
+.bs-callout-danger h4 {
+	color: #d9534f;
+}
+.bs-callout-warning {
+	border-left-color: #f0ad4e;
+}
+.bs-callout-warning h4 {
+	color: #f0ad4e;
+}
+.bs-callout-info {
+	border-left-color: #5bc0de;
+}
+.bs-callout-info h4 {
+	color: #5bc0de;
+}
+/*
+* End Bootstrap Callouts
+*/
+
+.alt-bg {
+	background-color: #B7D6E3;
+}
 .jumbotron {
 	background: #B7D6E3;
 	color: #FFFFFF;
@@ -36,4 +104,15 @@ body{
 }
 .jumbotron .lang-logo img {
 	max-width: 100%;
+}
+
+.footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 150px;
+	line-height: 100%;
+	background: #B7D6E3;
+	vertical-align: middle;
+	line-height: 140px;
 }
