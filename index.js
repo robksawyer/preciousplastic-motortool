@@ -59,9 +59,16 @@ app.post('/results', urlencodedParser, function(req, res){
 	var status = false;
 
 	//Start checking that motor.
-	var phaseResponse = testPhase(phase);
+	var phaseTestResults = testPhase(phase);
 
-	winston.info(phaseResponse);
+	winston.info(phaseTestResults);
+
+	var messages = {
+		'phase': phaseTestResults.response
+	};
+
+	winston.info(messages.length);
+	winston.info(messages.phase);
 
 	res.render('pages/results', {
 		status: status,
@@ -75,7 +82,9 @@ app.post('/results', urlencodedParser, function(req, res){
 		amps: amps,
 		gearRatio: gearRatio,
 		gearServiceFactor: gearServiceFactor,
-		gearServiceClass: gearServiceClass
+		gearServiceClass: gearServiceClass,
+
+		messages: messages
 	});
 });
 

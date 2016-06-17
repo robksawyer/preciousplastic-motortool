@@ -15,7 +15,15 @@
 		</div>
 
 		<div class="container">
-			More details and analysis here.
+			<div class="row">
+
+				<% if(messages.phase) { %>
+				<div class="bs-callout bs-callout-warning">
+					<h4>Phase Motor Warning</h4>
+					<p class="help-block"><%= messages.phase %></p>
+				</div>
+				<% } %>
+			</div>
 		</div>
 
 		<div class="well">
