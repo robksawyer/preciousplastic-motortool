@@ -64,10 +64,10 @@ body{
 	color: #B7D6E3;
 }
 .bs-callout-success {
-	border-left-color: #5cb85c;
+	border-left-color: #3dd0a2;
 }
 .bs-callout-success h4 {
-	color: #5cb85c;
+	color: #3dd0a2;
 }
 .bs-callout-danger {
 	border-left-color: #d9534f;
@@ -82,10 +82,10 @@ body{
 	color: #f0ad4e;
 }
 .bs-callout-info {
-	border-left-color: #5bc0de;
+	border-left-color: #47afda;
 }
 .bs-callout-info h4 {
-	color: #5bc0de;
+	color: #47afda;
 }
 /*
 * End Bootstrap Callouts
@@ -129,6 +129,15 @@ body{
 }
 .jumbotron .lang-logo img {
 	max-width: 100%;
+}
+
+.text-success {
+	color: #3dd0a2 !important;
+}
+
+.btn-success {
+	border-color: #3dd0a2 !important;
+	color: #3dd0a2 !important;
 }
 
 .footer{

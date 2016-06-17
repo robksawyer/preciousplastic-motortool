@@ -10,23 +10,62 @@
 		<div class="jumbotron text-center">
 			<div class="container">
 				<img src="flag_color_logo_500x500.png" alt="" class="logo"/>
-				<h1>This motor will work!</h1>
+				<% if(status) { %>
+				<h1><i class="fa fa-check-circle-o text-success"></i> You found a winner!</h1>
+				<p class="lead">Please check to see if there are any warnings below.</p>
+				<% } else { %>
+				<h1>😞Bad news.<br/>This motor will NOT work.</h1>
+				<p class="lead">See below for more information.</p>
+				<% } %>
 			</div>
 		</div>
 
 		<div class="container">
 			<div class="row">
+				<h2>Test Results</h2>
+				<p class="lead text-default">If you see any issues with or have questions about the results, you can contact support at <a href="mailto:support@preciousplasticwiki.com">support[at]preciousplasticwiki.com</a>.</p>
+			</div>
+			<div class="row">
 
+				<!-- Phase Results -->
 				<% if(messages.phase) { %>
 				<div class="bs-callout bs-callout-warning">
-					<h4>Phase Motor Warning</h4>
+					<h4><i class="fa fa-exclamation-circle"></i> Phase Motor Warning</h4>
 					<p class="help-block"><%= messages.phase %></p>
+				</div>
+				<% } %>
+
+				<!-- RPM Results -->
+				<% if(messages.rpm && !statuses.rpm) { %>
+				<div class="bs-callout bs-callout-danger">
+					<h4><i class="fa fa-times-circle-o"></i> Motor RPM Issue</h4>
+					<p class="help-block"><%= messages.rpm %></p>
+				</div>
+				<% } %>
+				<% if(messages.rpm && statuses.rpm) { %>
+				<div class="bs-callout bs-callout-success">
+					<h4><i class="fa fa-check-circle-o"></i> Motor RPMs Pass</h4>
+					<p class="help-block"><%= messages.rpm %></p>
+				</div>
+				<% } %>
+
+				<!-- Torque Results -->
+				<% if(messages.torque && !statuses.torque) { %>
+				<div class="bs-callout bs-callout-danger">
+					<h4><i class="fa fa-times-circle-o"></i> Motor Torque Issue</h4>
+					<p class="help-block"><%= messages.torque %></p>
+				</div>
+				<% } %>
+				<% if(messages.torque && statuses.torque) { %>
+				<div class="bs-callout bs-callout-success">
+					<h4><i class="fa fa-check-circle-o"></i> Motor Torque Pass</h4>
+					<p class="help-block"><%= messages.torque %></p>
 				</div>
 				<% } %>
 			</div>
 		</div>
 
-		<div class="well">
+		<div class="well hidden">
 			<h4>Collected Data</h4>
 			<p>Shop Details</p>
 			<ul>
@@ -44,7 +83,7 @@
 			</ul>
 			<p>Gearbox Details</p>
 			<ul>
-				<li><strong>Gear Ratio:</strong> <%= gearRatio %></li>
+				<li><strong>Gear Ratio:</strong> <%= gearRatioA %> : <%= gearRatioB %></li>
 				<li><strong>Gear Service Factor:</strong> <%= gearServiceFactor %></li>
 				<li><strong>Gear Service Class:</strong> <%= gearServiceClass %></li>
 			</ul>
