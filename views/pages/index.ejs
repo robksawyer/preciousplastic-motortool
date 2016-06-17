@@ -19,12 +19,12 @@
 		</div>
 		<div class="container">
 			<div class="row text-center">
-				<h2>Crank those engines...</h2>
+				<h2>Start your engine...</h2>
 				<p class="lead">Just enter the motor criteria requested below, cross your fingers and then submit.</p>
 			</div>
 
 			<div class="row">
-				<form id="motorForm" name="motorTool" action="/results" method="post" enctype="application/x-www-form-urlencoded">
+				<form id="motorForm" name="motorTool" action="/results" method="post" enctype="application/x-www-form-urlencoded" data-toggle="validator" role="form">
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -35,7 +35,7 @@
 								<label for="optionsShopVoltage">Outlet Voltage</label>
 								<div class="radio">
 									<label>
-										<input type="radio" name="optionsShopVoltage" id="optionsShopVoltageUnknown" value="0">
+										<input type="radio" name="optionsShopVoltage" id="optionsShopVoltageUnknown" value="0" checked required>
 										N/A
 									</label>
 								</div>
@@ -74,37 +74,17 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="optionsMotorVoltage">Motor Voltage</label>
-								<div class="radio">
-									<label>
-										<input type="radio" name="optionsMotorVoltage" id="optionsMotorVoltageUnknown" value="0">
-										N/A
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="optionsMotorVoltage" id="optionsMotorVoltage110" value="110">
-										110 Volts
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="optionsMotorVoltage" id="optionsMotorVoltage120" value="120">
-										120 Volts
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="optionsMotorVoltage" id="optionsMotorVoltage220" value="220">
-										220 Volts
-									</label>
+								<label for="inputMotorVoltage">Motor Voltage</label>
+								<div class="input-group col-sm-3">
+									<input type="number" min="0" class="form-control" name="inputMotorVoltage" id="inputMotorVoltage" placeholder="120" required>
+									<div class="input-group-addon">Volts</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="optionsPhase">Motor Phase</label>
 								<div class="radio">
 									<label>
-										<input type="radio" name="optionsPhase" id="optionsPhaseUnknown" value="0">
+										<input type="radio" name="optionsPhase" id="optionsPhaseUnknown" value="0" checked required>
 										N/A
 									</label>
 								</div>
@@ -125,7 +105,7 @@
 							<div class="form-group">
 								<label for="inputRPM">Revolutions Per Minute (RPM)</label>
 								<div class="input-group col-sm-3">
-									<input type="number" min="0" class="form-control" name="inputRPM" id="inputRPM" placeholder="1400"/>
+									<input type="number" min="0" class="form-control" name="inputRPM" id="inputRPM" placeholder="1400" required>
 									<div class="input-group-addon">RPM</div>
 								</div>
 								<p class="help-block">Listed in Hz? Use <a href="http://www.convertunits.com/from/RPM/to/hertz" target="_blank">this converter</a> to get it to RPM. Also note that 60 RPM equals 1 Hz.</p>
@@ -133,7 +113,7 @@
 							<div class="form-group">
 								<label for="inputPower">Power (kW – Kilowatts)</label>
 								<div class="input-group col-sm-3">
-									<input type="number" min="0" step="0.1" class="form-control" name="inputPower" id="inputPower" placeholder="1.5" />
+									<input type="number" min="0" step="0.1" class="form-control" name="inputPower" id="inputPower" placeholder="1.5" required>
 									<div class="input-group-addon">kW</div>
 								</div>
 								<p class="help-block">Listed as HP (Horsepower)? Use <a href="https://www.google.com/search?q=1+hp+in+kw" target="_blank">this converter</a> to get it kW. Also note that 2 HP is approximately equal to 1.5 kW.</p>
@@ -141,7 +121,7 @@
 							<div class="form-group">
 								<label for="inputTorque">Torque (in N m – Newton meters)</label>
 								<div class="input-group col-sm-3">
-									<input type="number" min="0" class="form-control" name="inputTorque" id="inputTorque" placeholder="60" />
+									<input type="number" min="0" class="form-control" name="inputTorque" id="inputTorque" placeholder="60" required>
 									<div class="input-group-addon">N m</div>
 								</div>
 								<p class="help-block">Listed in another unit of measurement? Use <a href="http://www.numberfactory.com/nf_torque.html" target="_blank">this converter</a> to get it to Newton meters.</p>
@@ -149,7 +129,7 @@
 							<div class="form-group">
 								<label for="inputAmps">Amps</label>
 								<div class="input-group col-sm-2">
-									<input type="number" class="form-control" name="inputAmps" id="inputAmps" min="0" placeholder="6.81"/>
+									<input type="number" class="form-control" name="inputAmps" id="inputAmps" min="0" step="0.1" placeholder="6.81" required>
 									<div class="input-group-addon">Amps</div>
 								</div>
 								<div class="bs-callout bs-callout-warning">
@@ -166,23 +146,30 @@
 						</div>
 						<div class="panel-body">
 							<div class="form-group">
-								<label for="inputGearRatio">Gearbox Reducer Ratio (i)</label>
-								<div class="input-group col-sm-2">
-									<input type="text" class="form-control" name="inputGearRatio" id="inputGearRatio" placeholder="1:20" />
+								<label for="inputGearRatioA">Gearbox Reducer Ratio (i)</label>
+								<div class="row">
+									<div class="col-xs-3 col-sm-1 col-lg-1">
+										<input type="text" class="form-control" name="inputGearRatioA" id="inputGearRatioA" placeholder="1" required>
+									</div>
+									<div class="col-xs-1 text-center padding-0 width-2px">
+										<span>:</span>
+									</div>
+									<div class="col-xs-3 col-sm-1 col-lg-1">
+										<input type="text" class="form-control" name="inputGearRatioB" id="inputGearRatioB" placeholder="20" required>
+									</div>
 								</div>
-								<!-- <p class="help-block"></p> -->
 							</div>
 							<div class="form-group">
 								<label for="inputGearServiceFactor">Gearbox Service Factor (s)</label>
 								<div class="input-group col-sm-2">
-									<input type="number" class="form-control" name="inputGearServiceFactor" id="inputGearServiceFactor" placeholder="1.2" />
+									<input type="number" class="form-control" min="0" step="0.1" name="inputGearServiceFactor" id="inputGearServiceFactor" placeholder="1.2">
 								</div>
 								<p class="help-block">See the wiki <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide#How_do_motor_reducer_gearboxes_work_and_how_can_I_choose_the_right_one">FAQ on gearboxes</a>.</p>
 							</div>
 							<div class="form-group">
 								<label for="inputGearServiceClass">Gearbox Service Class</label>
 								<div class="input-group col-sm-2">
-									<input type="text" class="form-control" name="inputGearServiceClass" id="inputGearServiceClass" placeholder="I" />
+									<input type="text" class="form-control" name="inputGearServiceClass" id="inputGearServiceClass" placeholder="I">
 								</div>
 								<p class="help-block">This is likely to be a roman numeral. See the wiki <a href="http://www.preciousplasticwiki.com/index.php?title=Definitive_Motor_Guide#How_do_motor_reducer_gearboxes_work_and_how_can_I_choose_the_right_one">FAQ on gearboxes</a>.</p>
 							</div>

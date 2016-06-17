@@ -44,7 +44,7 @@ app.post('/results', urlencodedParser, function(req, res){
 	if (!req.body) return res.sendStatus(400);
 
 	var shopVolts = req.body.optionsShopVoltage;
-	var motorVolts = req.body.optionsMotorVoltage;
+	var motorVolts = req.body.inputMotorVoltage;
 	var brand = req.body.inputBrand;
 	var phase = req.body.optionsPhase;
 	var RPM = req.body.inputRPM;
@@ -58,7 +58,10 @@ app.post('/results', urlencodedParser, function(req, res){
 	//This variable controls whether or not the motor will work.
 	var status = false;
 
-	winston.info(req.body);
+	//Start checking that motor.
+	var phaseResponse = testPhase(phase);
+
+	winston.info(phaseResponse);
 
 	res.render('pages/results', {
 		status: status,
@@ -79,3 +82,35 @@ app.post('/results', urlencodedParser, function(req, res){
 app.listen(app.get('port'), function() {
 	console.log('Node app is running on port', app.get('port'));
 });
+
+/**
+ * The phase test checks to see if the motor phase will work with the shop outlet.
+ * Formula:
+ * Single phase motors will work with 110V - 220V (common plugs).
+ * 3 phase motors need a special plug
+ * @param shopVolts
+ * @param phase
+ * @return object (See buildResponse)
+ */
+function testPhase(phase){
+	var message = "";
+	var status = false;
+	winston.info(phase);
+	if(phase === "3"){
+		message = "Your motor will need a special industrial plug. It will NOT work in a common household plug without some hacking. Are you ready? Check out this link for more.";
+	}
+	return buildResponse(status, message);
+}
+
+/**
+ * This is a helper method that builds a proper response.
+ * @param status
+ * @param data
+ * @return array
+ */
+function buildResponse(status, data){
+	return {
+		status: status,
+		response: data
+	};
+}
