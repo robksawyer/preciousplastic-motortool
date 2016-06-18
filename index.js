@@ -64,6 +64,11 @@ app.post('/results', urlencodedParser, function(req, res){
 
 	var rpmTestResults = testRPM(RPM, gearRatioA, gearRatioB);
 
+	//If torque wasn't included, try to calculate it.
+	if(torque === ""){
+		torque = calcTorque(power, RPM);
+	}
+
 	var torqueTestResults = testTorque(torque);
 
 	// winston.info(phaseTestResults);
@@ -213,12 +218,17 @@ function testRPM(RPM, gearRatioA, gearRatioB){
  * testTorque
  * Tests to see if the motor torque is within a desired range.
  * @param torque
- * @return
+ * @return object (See buildResponse)
  */
 function testTorque(torque){
 	var message = "";
 	var acceptableRange = [20,60];
 	var status = true;
+	if(torque === ""){
+		message = "We were unable to calculate the torque of the motor. Please provide the power and RPM.";
+		status = false;
+		return buildResponse(status, message);
+	}
 	if(torque < acceptableRange[0]){
 		message = "A torque of " + torque + " Newton meters is too low. It may not have enough power.";
 		status = false;
@@ -235,6 +245,29 @@ function testTorque(torque){
 	}
 	return buildResponse(status, message);
 }
+
+/**
+ * calcSyncSpeed
+ * Calculate asynchronous speed.
+ * Ns = f/P
+ * f = Supply voltage frequency
+ * P = No. of poles of the motor
+ * @param int f Supply voltage frequency
+ * @param int P No. of poles of the motor
+ * @return float
+ */
+ function calcSyncSpeed(f, P){
+	 return f/P;
+ }
+
+ /**
+  * calcTorque
+	* Calculates the torque of a motor
+	* T = 9550 x Power of Motor (kW) / RPM
+  */
+ function calcTorque(power, RPM){
+	 return (9550 * power) / RPM;
+ }
 
 /**
  * This is a helper method that builds a proper response.

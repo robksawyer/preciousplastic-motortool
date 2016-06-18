@@ -140,13 +140,33 @@ body{
 	color: #3dd0a2 !important;
 }
 
+a:link.link-alt,
+a:active.link-alt,
+a:visited.link-alt{
+	color: #3dd0a2 !important;
+}
+
+a:hover.link-alt{
+	color: #31b189 !important;
+}
+
 .footer{
 	position: relative;
 	bottom: 0;
 	width: 100%;
 	height: 150px;
+	color: #FFFFFF;
 	line-height: 100%;
 	background: #B7D6E3;
 	vertical-align: middle;
 	line-height: 140px;
+}
+
+.footer a:link,
+.footer a:active,
+.footer a:visited {
+	color :#FFFFFF;
+}
+.footer a:hover {
+	color :#777;
 }

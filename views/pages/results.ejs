@@ -9,14 +9,19 @@
 
 		<div class="jumbotron text-center">
 			<div class="container">
-				<img src="flag_color_logo_500x500.png" alt="" class="logo"/>
-				<% if(status) { %>
-				<h1><i class="fa fa-check-circle-o text-success"></i> You found a winner!</h1>
-				<p class="lead">Please check to see if there are any warnings below.</p>
-				<% } else { %>
-				<h1>😞Bad news.<br/>This motor will NOT work.</h1>
-				<p class="lead">See below for more information.</p>
-				<% } %>
+				<div class="row">
+					<img src="flag_color_logo_500x500.png" alt="" class="logo"/>
+					<% if(status) { %>
+					<h1><i class="fa fa-check-circle-o text-success"></i> You found a winner!</h1>
+					<p class="lead">Please check to see if there are any warnings below.</p>
+					<% } else { %>
+					<h1>😞Bad news.<br/>This motor will NOT work.</h1>
+					<p class="lead">See below for more information.</p>
+					<% } %>
+				</div>
+				<div class="row">
+					<p>Want to test another motor? <a href="/" title="Test another motor" class="link-alt">Start over here.</a><p>
+				</div>
 			</div>
 		</div>
 
